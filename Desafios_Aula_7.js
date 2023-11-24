@@ -143,7 +143,8 @@ function jogar() {
   let jogoAtivo = true;
 
   function status() {
-    alert(`${tabuleiro[0] ?? '1'} | ${tabuleiro[1] ?? '2'} | ${tabuleiro[2] ?? '3'} 
+    alert(`
+    ${tabuleiro[0] ?? '1'} | ${tabuleiro[1] ?? '2'} | ${tabuleiro[2] ?? '3'} |
     ${tabuleiro[3] ?? '4'} | ${tabuleiro[4] ?? '5'} | ${tabuleiro[5] ?? '6'} |
     ${tabuleiro[6] ?? '7'} | ${tabuleiro[7] ?? '8'} | ${tabuleiro[8] ?? '9'} |`);
     console.log(
@@ -191,18 +192,18 @@ function jogar() {
 
       const vencedor = verificarVencedor(tabuleiro);
       if (vencedor) {
-        console.log(`Jogador ${vencedor} venceu!`);
+        alert(`Jogador ${vencedor} venceu!`);
         jogoAtivo = false;
         status();
       } else if (tabuleiroCompleto(tabuleiro)) {
-        console.log("Empate!");
+        Alert(`Empate!`);
         jogoAtivo = false;
         status();
       } else {
         jogadorAtual = jogadorAtual === "X" ? "O" : "X";
       }
     } else {
-      console.log("Jogada inválida. Tente novamente.");
+      alert(`Jogada inválida. Tente novamente.`);
     }
   }
 }
